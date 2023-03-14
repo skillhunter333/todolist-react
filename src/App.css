@@ -65,6 +65,15 @@ h1 {
   
 }
 
+.todo-delete {
+  background: #f03a3a;
+  color: #fff;
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
+  
+}
+
 .Todo {
   display: flex;
   justify-content: space-between;
