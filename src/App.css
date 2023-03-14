@@ -69,7 +69,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to right bottom, #425cc3, rgb(209, 81, 81));
+  background: linear-gradient(to right bottom, #6b85eb, rgb(225, 235, 93));
   color: #fff;
   padding: 0.75rem 1rem;
   border-radius: 5px;
@@ -78,7 +78,7 @@ h1 {
 }
 .Todo:nth-child(4n + 1) {
  
-  background: linear-gradient(90deg, #425cc3, rgb(106, 25, 92));
+  background: linear-gradient(90deg, #36e86b, rgb(236, 118, 216));
  
 }
 .Todo:nth-child(4n + 2) {
@@ -88,7 +88,7 @@ h1 {
 }
 .Todo:nth-child(4n + 3) {
  
-  background: linear-gradient(90deg, #e8ed51, rgb(28, 22, 27));
+  background: linear-gradient(90deg, #e8ed51, rgb(131, 73, 121));
  
 }
 .Todo:nth-child(4n + 3) {
