@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from "react";
 
@@ -33,7 +32,7 @@ const TodoList = () => {
       <h1>Todo List</h1>
       <form onSubmit={addTodo} className="TodoForm">
         <input className="todo-input" type="text" name="todo" placeholder="Add a todo" />
-        <button type="submit">Add</button>
+        <button className='todo-btn' type="submit">Add</button>
       </form>
       <ul >
         {todos.map((todo, index) => (
