@@ -10,6 +10,7 @@ export const TodoForm = ({addTodo}) => {
         addTodo(value);
         // clear form after submission
         setValue('');
+        
       };
   return (
     <form onSubmit={handleSubmit} className="TodoForm">

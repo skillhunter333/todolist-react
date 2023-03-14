@@ -99,13 +99,15 @@ h1 {
 
 .fa-trash {
   margin-left: 1.75rem;
+  color: #7f0606;
 }
 
 .completed {
-  color: #6e4dc3;
+  color: #000;
   text-decoration: line-through;
 }
-.faPenToSquare {
+.fa-pen-to-square {
   margin-left: 0.75rem;
+  color: #2905ab;
 }
  
