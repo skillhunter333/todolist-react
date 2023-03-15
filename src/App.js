@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
+  const [newTodo, setNewTodo] = useState("");
 
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
@@ -15,12 +16,14 @@ const TodoList = () => {
 
   const addTodo = (event) => {
     event.preventDefault();
-    const todo = {
-      title: event.target.title.value,
-      done: false,
-    };
-    setTodos([...todos, todo]);
-    event.target.reset();
+    if (newTodo.trim() !== "") {
+      const todo = {
+        title: newTodo,
+        done: false,
+      };
+      setTodos([...todos, todo]);
+      setNewTodo("");
+    }
   };
 
   const deleteTodo = (index) => {
@@ -41,13 +44,20 @@ const TodoList = () => {
     setTodos(newTodos);
   };
 
+
   return (
     
     <div className='TodoWrapper'>
       <h1>Todo List</h1>
       <form onSubmit={addTodo} className="TodoForm">
-        <p>Push button to add to the list</p>
-        {/* <input className="todo-input" type="text" name="todo" placeholder="Add a todo" /> */}
+        <input
+        className='todo-input'
+          type="text"
+          name="title"
+          placeholder="Add a todo"
+          value={newTodo}
+          onChange={(e) => setNewTodo(e.target.value)}
+        />
         <button className='todo-btn' type="submit">Add</button>
       </form>
       <ul >
@@ -65,7 +75,7 @@ const TodoList = () => {
             <button className='todo-delete' onClick={() => deleteTodo(index)}>Delete</button>
             <button className='todo-edit'
               onClick={() => {
-                const newTitle = prompt("Enter new title:", todo.title);
+                const newTitle = prompt("Enter new item:", todo.title);
                 if (newTitle !== null) {
                   editTodo(index, newTitle);
                 }
