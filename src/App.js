@@ -2,18 +2,16 @@ import './App.css';
 import React, { useState, useEffect } from "react";
 
 const TodoList = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState((JSON.parse(localStorage.getItem('todos'))) || []);
   const [newTodo, setNewTodo] = useState("");
   const [newDate, setNewDate] = useState("");
 
-  useEffect(() => {
-    const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
-    setTodos(storedTodos);
-  }, []);
+  
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
+
 
   const addTodo = (event) => {
     event.preventDefault();
@@ -30,12 +28,13 @@ const TodoList = () => {
   };
 
   const deleteTodo = (index) => {
+   
     const newTodos = [...todos];
     newTodos.splice(index, 1);
     setTodos(newTodos);
   };
 
-  const editTodo = (index, newTitle, newDate) => {
+  const editTodo = (index, newTitle, newDate) => {    
     const newTodos = [...todos];
     newTodos[index].title = newTitle;
     newTodos[index].date = newDate;
